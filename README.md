@@ -19,5 +19,5 @@ Hi! I’m **Joseph Santillan Cabenta**, a BSCS student currently learning Object
 - I always and vibe to music
 
 ## 📬 Contacts
-- **Facebook**: [Your FB Profile](https://www.facebook.com/cabenta.joseph])  
+- **Facebook**: https://www.facebook.com/cabenta.joseph  
 - **Email**: jcabenta2005@gmail.com
