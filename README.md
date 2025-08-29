@@ -1,7 +1,7 @@
 # 🌟 My 7OOP Lab Task Repository 🌟
 
 ## 👤 About Me
-Hi! I’m **[Joseph Santillan Cabenta]**, a BSCS student currently learning Object-Oriented Programming.
+Hi! I’m **Joseph Santillan Cabenta**, a BSCS student currently learning Object-Oriented Programming.
 
 <!-- My Picture -->
 <p align="center">
