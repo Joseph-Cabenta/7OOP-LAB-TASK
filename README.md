@@ -2,7 +2,7 @@
 
 ## 👤 About Me
 Hi! I’m **[Joseph Santillan Cabenta]**, a BSCS student currently learning Object-Oriented Programming.  
-![My Picture]([https://i.imgur.com/80BdGKh.jpeg])  
+![Me](https://i.imgur.com/80BdGKh.jpeg)  
 
 ## 💻 Areas of Interest & Programming Languages
 - **Areas of Interest**: Game Development, Project Management, Software Developing
@@ -15,5 +15,5 @@ Hi! I’m **[Joseph Santillan Cabenta]**, a BSCS student currently learning Obje
 - I always and vibe to music
 
 ## 📬 Contacts
-- **Facebook**: [Your FB Profile]([https://www.facebook.com/cabenta.joseph])  
+- **Facebook**: [Your FB Profile](https://www.facebook.com/cabenta.joseph])  
 - **Email**: jcabenta2005@gmail.com
