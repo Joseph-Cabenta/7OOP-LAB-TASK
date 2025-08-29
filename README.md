@@ -3,7 +3,7 @@
 ## 👤 About Me
 Hi! I’m **[Joseph Santillan Cabenta]**, a BSCS student currently learning Object-Oriented Programming.
 
-!<!-- My Picture -->
+<!-- My Picture -->
 <p align="center">
   <img src="https://i.imgur.com/80BdGKh.jpeg" alt="My Picture" width="200"/>
 </p>
