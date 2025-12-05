@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lab Tasks | Joseph Cabenta Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -16,34 +16,72 @@
   </nav>
 
   <!-- Header -->
-  <header>
+  <header class="lab-header">
     <h1>Lab Task Collection</h1>
-    <p>Browse through my Midterm and Finals lab activities below.</p>
+    <p>Browse Midterm and Final lab activities below.</p>
   </header>
 
-  <!-- Midterm Section -->
-  <section class="projects">
-    <h2>Midterm Lab Tasks</h2>
-    <ul>
-      <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_1.pdf" target="_blank">Midterm Lab Activity 1</a></li>
-      <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_2.pdf" target="_blank">Midterm Lab Activity 2</a></li>
-      <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_3.pdf" target="_blank">Midterm Lab Activity 3</a></li>
-      <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_4.pdf" target="_blank">Midterm Lab Activity 4</a></li>
-      <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_5.pdf" target="_blank">Midterm Lab Activity 5</a></li>
-    </ul>
-  </section>
+  <!-- Tabs -->
+  <div class="tabs-wrapper">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="midterm">Midterm</button>
+      <button class="tab-button" data-tab="finals">Finals</button>
+    </div>
 
-  <!-- Finals Section -->
-  <section class="projects">
-    <h2>Finals Lab Tasks</h2>
-    <ul>
-        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_1.pdf" target="_blank">Final Lab Activity 1</a></li>
-    </ul>
-  </section>
+    <!-- Tab contents -->
+    <div class="tab-content" id="midterm">
+      <section class="projects">
+        <h2>Midterm Lab Tasks</h2>
+        <ul>
+          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_1.pdf" target="_blank">700P_MIDTERM_LAB_ACT_1</a></li>
+          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_2.pdf" target="_blank">700P_MIDTERM_LAB_ACT_2</a></li>
+          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_3.pdf" target="_blank">700P_MIDTERM_LAB_ACT_3</a></li>
+          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_4.pdf" target="_blank">700P_MIDTERM_LAB_ACT_4</a></li>
+          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_5.pdf" target="_blank">700P_MIDTERM_LAB_ACT_5</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="tab-content" id="finals" style="display:none;">
+      <section class="projects">
+        <h2>Finals Lab Tasks</h2>
+        <ul>
+          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_1.pdf" target="_blank">700P_FINAL_LAB_ACT_1</a></li>
+          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_2.pdf" target="_blank">700P_FINAL_LAB_ACT_2</a></li>
+          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_3.pdf" target="_blank">700P_FINAL_LAB_ACT_3</a></li>
+          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_4.pdf" target="_blank">700P_FINAL_LAB_ACT_4</a></li>
+          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_5.pdf" target="_blank">700P_FINAL_LAB_ACT_5</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Joseph Cabenta | Portfolio Website</p>
   </footer>
+
+  <!-- Tiny JS to switch tabs -->
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // set active button
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // show the selected tab content
+        const tab = btn.getAttribute('data-tab');
+        contents.forEach(c => {
+          c.style.display = (c.id === tab) ? 'block' : 'none';
+        });
+
+        // scroll to top of tab area for convenience
+        window.scrollTo({ top: document.querySelector('.tabs-wrapper').offsetTop - 10, behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
