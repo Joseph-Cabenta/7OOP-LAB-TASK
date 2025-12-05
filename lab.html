@@ -23,37 +23,35 @@
 
   <!-- Tabs -->
   <div class="toggle-container">
-  <button class="toggle-btn active" id="midtermBtn">Midterm</button>
-  <button class="toggle-btn" id="finalBtn">Finals</button>
-</div>
+    <button class="toggle-btn active" data-target="midterm">Midterm</button>
+    <button class="toggle-btn" data-target="finals">Finals</button>
+  </div>
 
+  <!-- Tab contents -->
+  <div class="tab-content" id="midterm">
+    <section class="projects">
+      <h2>Midterm Lab Tasks</h2>
+      <ul>
+        <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_1.pdf" target="_blank">MIDTERM LAB ACT 1</a></li>
+        <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_2.pdf" target="_blank">MIDTERM LAB ACT 2</a></li>
+        <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_3.pdf" target="_blank">MIDTERM LAB ACT 3</a></li>
+        <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_4.pdf" target="_blank">MIDTERM LAB ACT 4</a></li>
+        <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_5.pdf" target="_blank">MIDTERM LAB ACT 5</a></li>
+      </ul>
+    </section>
+  </div>
 
-    <!-- Tab contents -->
-    <div class="tab-content" id="midterm">
-      <section class="projects">
-        <h2>Midterm Lab Tasks</h2>
-        <ul>
-          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_1.pdf" target="_blank">MIDTERM LAB ACT 1</a></li>
-          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_2.pdf" target="_blank">MIDTERM LAB ACT 2</a></li>
-          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_3.pdf" target="_blank">MIDTERM LAB ACT 3</a></li>
-          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_4.pdf" target="_blank">MIDTERM LAB ACT 4</a></li>
-          <li><a href="assets/pdf/700P_MIDTERM_LAB_ACT_5.pdf" target="_blank">MIDTERM LAB ACT 5</a></li>
-        </ul>
-      </section>
-    </div>
-
-    <div class="tab-content" id="finals" style="display:none;">
-      <section class="projects">
-        <h2>Finals Lab Tasks</h2>
-        <ul>
-          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_1.pdf" target="_blank">FINAL LAB ACT 1</a></li>
-          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_2.pdf" target="_blank">FINAL LAB ACT 2</a></li>
-          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_3.pdf" target="_blank">FINAL LAB ACT 3</a></li>
-          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_4.pdf" target="_blank">FINAL LAB ACT 4 - (Paired)</a></li>
-          <li><a href="assets/pdf/700P_FINAL_LAB_ACT_5.pdf" target="_blank">FINAL LAB ACT 5</a></li>
-        </ul>
-      </section>
-    </div>
+  <div class="tab-content" id="finals" style="display:none;">
+    <section class="projects">
+      <h2>Finals Lab Tasks</h2>
+      <ul>
+        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_1.pdf" target="_blank">FINAL LAB ACT 1</a></li>
+        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_2.pdf" target="_blank">FINAL LAB ACT 2</a></li>
+        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_3.pdf" target="_blank">FINAL LAB ACT 3</a></li>
+        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_4.pdf" target="_blank">FINAL LAB ACT 4 - (Paired)</a></li>
+        <li><a href="assets/pdf/700P_FINAL_LAB_ACT_5.pdf" target="_blank">FINAL LAB ACT 5</a></li>
+      </ul>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -63,24 +61,32 @@
 
   <!-- Tiny JS to switch tabs -->
   <script>
-    const buttons = document.querySelectorAll('.tab-button');
+    // Select all toggle buttons and tab contents
+    const buttons = document.querySelectorAll('.toggle-btn');
     const contents = document.querySelectorAll('.tab-content');
 
+    // Add event listeners to each button
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        // set active button
+        // Remove 'active' class from all buttons and add it to the clicked one
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // show the selected tab content
-        const tab = btn.getAttribute('data-tab');
-        contents.forEach(c => {
-          c.style.display = (c.id === tab) ? 'block' : 'none';
+        // Show the corresponding content and hide the others
+        const targetId = btn.getAttribute('data-target');
+        contents.forEach(content => {
+          content.style.display = (content.id === targetId) ? 'block' : 'none';
         });
 
-        // scroll to top of tab area for convenience
-        window.scrollTo({ top: document.querySelector('.tabs-wrapper').offsetTop - 10, behavior: 'smooth' });
+        // Scroll to the top of the tab content area
+        window.scrollTo({ top: document.querySelector('.toggle-container').offsetTop - 10, behavior: 'smooth' });
       });
+    });
+
+    // Optionally, set the first tab as active by default
+    window.addEventListener('load', () => {
+      const firstButton = buttons[0];
+      firstButton.click();  // Trigger a click on the first tab button
     });
   </script>
 </body>
